@@ -507,44 +507,109 @@
     </div>
   </section>
 
-  <!-- ENROL -->
-  <section id="enrol">
-    <div class="container">
-      <div class="card card-pad">
-        <div class="grid-2">
-          <div class="stack">
-            <h2 style="margin-bottom:8px;">Enrol on this course</h2>
-            <p>
-              The programme is accredited and upon completion you will receive <strong>32 hours of CPD</strong>.
-              Certification cannot be given until all four days are completed.
-            </p>
+<!-- ENROL -->
+<section id="enrol">
+  <div class="container">
+    <div class="card card-pad">
+      <div class="grid-2">
 
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="#">Secure your place</a>
-              <a class="btn btn-secondary" href="#policies">View policies</a>
-            </div>
-          </div>
+        <!-- LEFT COLUMN -->
+        <div class="stack">
+          <h2 style="margin-bottom:8px;">Enrol on this course</h2>
+          <p>
+            The programme is accredited and upon completion you will receive <strong>32 hours of CPD</strong>.
+            Certification cannot be given until all four days are completed.
+          </p>
 
-          <div class="card-pad" style="padding:0;">
-            <div class="card" style="padding:18px; background: rgba(24,214,209,.05); border-color: rgba(24,214,209,.22); box-shadow:none;">
-              <h3 style="margin-bottom:8px;">Equipment required</h3>
-              <p>
-                A significant part of the course will require an <strong>iPad</strong>, <strong>Apple Pencil</strong>, and <strong>DSLR camera</strong>.
-                If you fail to bring these, you accept that a substitute will not be provided.
-              </p>
-            </div>
-
-            <div class="spacer-sm"></div>
-
-            <div class="card" style="padding:18px; box-shadow:none;">
-              <h3 style="margin-bottom:8px;">Schedule</h3>
-              <p>Wednesday–Saturday, 09:00–17:00 daily. Drinks reception on Saturday.</p>
-            </div>
+          <div class="hero-actions">
+            <!-- CHANGED: this now scrolls to the form below -->
+            <a class="btn btn-primary" href="#enrol-form">Secure your place</a>
+            <a class="btn btn-secondary" href="#policies">View policies</a>
           </div>
         </div>
-      </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="card-pad" style="padding:0;">
+          <div class="card" style="padding:18px; background: rgba(24,214,209,.05); border-color: rgba(24,214,209,.22); box-shadow:none;">
+            <h3 style="margin-bottom:8px;">Equipment required</h3>
+            <p>
+              A significant part of the course will require an <strong>iPad</strong>, <strong>Apple Pencil</strong>, and <strong>DSLR camera</strong>.
+              If you fail to bring these, you accept that a substitute will not be provided.
+            </p>
+          </div>
+
+          <div class="spacer-sm"></div>
+
+          <div class="card" style="padding:18px; box-shadow:none;">
+            <h3 style="margin-bottom:8px;">Schedule</h3>
+            <p>Wednesday–Saturday, 09:00–17:00 daily. Drinks reception on Saturday.</p>
+          </div>
+        </div>
+
+      </div> <!-- ✅ END .grid-2 (two-column layout) -->
+    </div>   <!-- ✅ END .card (the enrol card) -->
+
+    <!-- ✅✅✅ PASTE/KEEP THE FORM HERE (still inside #enrol, but OUTSIDE the grid) -->
+    <div id="enrol-form" class="card" style="padding:18px; box-shadow:none; margin-top:18px;">
+      <h3 style="margin-bottom:8px;">Enrolment enquiry</h3>
+      <p style="margin-bottom:14px;">
+        Submit your details and we’ll confirm availability and the next cohort options.
+      </p>
+
+      <!-- IMPORTANT:
+           Replace the action URL with your Formspree endpoint, e.g. https://formspree.io/f/abcdwxyz
+      -->
+      <form action="https://formspree.io/f/yourFormID" method="POST" style="display:grid; gap:12px;">
+
+        <div style="display:grid; gap:6px;">
+          <label for="name" style="color:rgba(234,242,247,.92); font-weight:600;">Full name</label>
+          <input id="name" name="name" required
+            style="padding:12px 12px; border-radius:12px; border:1px solid rgba(27,42,54,.85); background:rgba(7,10,13,.55); color:var(--text);">
+        </div>
+
+        <div style="display:grid; gap:6px;">
+          <label for="email" style="color:rgba(234,242,247,.92); font-weight:600;">Email</label>
+          <input id="email" name="email" type="email" required
+            style="padding:12px 12px; border-radius:12px; border:1px solid rgba(27,42,54,.85); background:rgba(7,10,13,.55); color:var(--text);">
+        </div>
+
+        <div style="display:grid; gap:6px;">
+          <label for="phone" style="color:rgba(234,242,247,.92); font-weight:600;">Phone (optional)</label>
+          <input id="phone" name="phone" type="tel"
+            style="padding:12px 12px; border-radius:12px; border:1px solid rgba(27,42,54,.85); background:rgba(7,10,13,.55); color:var(--text);">
+        </div>
+
+        <div style="display:grid; gap:6px;">
+          <label for="experience" style="color:rgba(234,242,247,.92); font-weight:600;">Experience level</label>
+          <select id="experience" name="experience" required
+            style="padding:12px 12px; border-radius:12px; border:1px solid rgba(27,42,54,.85); background:rgba(7,10,13,.55); color:var(--text);">
+            <option value="" disabled selected>Select…</option>
+            <option>Place composite routinely</option>
+            <option>Some veneer experience</option>
+            <option>Advanced aesthetic cases</option>
+          </select>
+        </div>
+
+        <div style="display:grid; gap:6px;">
+          <label for="message" style="color:rgba(234,242,247,.92); font-weight:600;">Message (optional)</label>
+          <textarea id="message" name="message" rows="4"
+            style="padding:12px 12px; border-radius:12px; border:1px solid rgba(27,42,54,.85); background:rgba(7,10,13,.55); color:var(--text);"></textarea>
+        </div>
+
+        <button class="btn btn-primary" type="submit" style="width:fit-content;">
+          Submit enquiry
+        </button>
+
+        <p style="font-size:.92rem; margin-top:6px; color:var(--muted);">
+          By submitting, you agree we may contact you about course availability.
+        </p>
+      </form>
     </div>
-  </section>
+    <!-- ✅✅✅ END FORM -->
+
+  </div> <!-- END .container -->
+</section>
+
 
   <!-- POLICIES -->
   <section id="policies">
