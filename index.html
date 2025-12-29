@@ -275,6 +275,62 @@
       .sticky-cta{ display:block; }
       body{ padding-bottom: 78px; }
     }
+    /* ---------------------------------------
+   Mobile polish (no layout redesign)
+--------------------------------------- */
+@media (max-width: 820px){
+
+  /* Global spacing */
+  section { padding: 64px 0; }
+  .hero { padding: 34px 0 54px; }
+
+  /* Make hero panel breathe on small screens */
+  .hero .hero-panel { padding: 22px; }
+
+  /* Typography */
+  h1 { font-size: 2.05rem; }
+  h2 { font-size: 1.55rem; }
+  p, .lead { font-size: 1rem; }
+
+  /* Nav: keep it usable and not cramped */
+  .nav-inner { padding: 12px 16px; }
+  .nav-links { display: none; } /* keep your current behaviour */
+  .nav-cta a.btn { padding: 12px 14px; }
+
+  /* Buttons: full-width on mobile for easier tapping */
+  .hero-actions { gap: 10px; }
+  .hero-actions .btn { width: 100%; }
+  .nav-cta { gap: 8px; }
+
+  /* Pills: wrap nicely */
+  .pill-row { gap: 8px; }
+  .pill { font-size: .9rem; padding: 8px 10px; }
+
+  /* Facts: avoid awkward wrapping on the right column */
+  .facts { gap: 10px; }
+  .fact { align-items: flex-start; }
+  .fact strong { max-width: 60%; } /* prevents the right value from crushing the label */
+
+  /* Cards: reduce padding slightly */
+  .card-pad { padding: 18px; }
+
+  /* Accordions: improve tap target and readability */
+  summary { padding: 16px; }
+  .details-body { padding: 0 16px 16px; }
+
+  /* Footer: tighten spacing */
+  footer { padding: 34px 0; }
+
+  /* Media elements should never overflow */
+  img, video, iframe { max-width: 100%; height: auto; }
+}
+
+/* Slightly smaller phones */
+@media (max-width: 420px){
+  h1 { font-size: 1.9rem; }
+  .hero .hero-panel { padding: 18px; }
+  .btn { font-size: .95rem; }
+}
   </style>
 </head>
 
